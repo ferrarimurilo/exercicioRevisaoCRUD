@@ -1,5 +1,7 @@
 const prompt = require("prompt-sync")({sigint:true});
 
+const mod = require("./cadastro");
+
 while(true){
   console.log(`
     1 - Cadastrar produto
@@ -12,14 +14,19 @@ while(true){
 
   switch (opcao) {
     case 1:
+        mod.cadastrar();
       break;
     case 2:
+        mod.listar();
       break;
     case 3:
+        mod.editar();
       break;
     case 4:
+        mod.excluir();
       break;
     case 5:
+        process.exit();
       break;
     default:
         console.log("Opção inválida, tente uma das opções disponíveis no menu.");

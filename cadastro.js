@@ -35,3 +35,5 @@ let excluir = () => {
     let opcaoExcluir = prompt("Digite o número do produto que deseja excluir: ");
     produtos.splice(opcaoExcluir-1,1);
 }
+
+module.exports = {cadastrar, listar, editar, excluir}
