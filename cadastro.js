@@ -2,6 +2,29 @@ const prompt = require("prompt-sync")({sigint:true});
 
 let produtos = [];
 
+let casos = () => {
+    let opcao = +prompt("Digite a opção desejada: ");
+    switch (opcao) {
+        case 1:
+            cadastrar();
+          break;
+        case 2:
+            listar();
+          break;
+        case 3:
+            editar();
+          break;
+        case 4:
+            excluir();
+          break;
+        case 5:
+            process.exit();
+          break;
+        default:
+            console.log("Opção inválida, tente uma das opções disponíveis no menu.");
+          break;
+      }
+}
 let cadastrar = () => {
     console.log("Cadastrar produtos: ");
     let nome = prompt("Digite o nome do produto que deseja cadastrar: ");
@@ -36,4 +59,4 @@ let excluir = () => {
     produtos.splice(opcaoExcluir-1,1);
 }
 
-module.exports = {cadastrar, listar, editar, excluir}
+module.exports = {cadastrar, listar, editar, excluir, casos}
