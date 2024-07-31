@@ -7,7 +7,7 @@ while(true){
     1 - Cadastrar produto
     2 - Listar produtos cadastrados
     3 - Editar produtos cadastrados
-    4 - Remover produco cadastrado
+    4 - Remover produto cadastrado
     5 - Sair
     `);
     mod.casos();

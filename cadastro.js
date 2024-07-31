@@ -25,11 +25,19 @@ let casos = () => {
           break;
       }
 }
+let coletar = () => {
+    var nome = prompt("Digite o nome do produto que deseja cadastrar: ");
+    var valor = prompt("Digite o preço do produto que deseja cadastrar: ");
+
+    return {nome, valor}
+}
+
 let cadastrar = () => {
     console.log("Cadastrar produtos: ");
-    let nome = prompt("Digite o nome do produto que deseja cadastrar: ");
-    let valor = prompt("Digite o preço do produto que deseja cadastrar: ");
-    produtos.push({nome,valor});
+    const produto = coletar();
+    if(produto.nome != "" && produto.valor != "" && produto.valor >= 0){
+        produtos.push(produto);
+    }
 }
 
 let listar = () => {
@@ -46,9 +54,10 @@ let editar = () => {
     console.log("Editar produto: ");
     listar();
     let opcaoEditar = prompt("Digite o número do produto que deseja editar: ");
-    let nome = prompt("Digite o nome do produto que deseja cadastrar: ");
-    let valor = prompt("Digite o preço do produto que deseja cadastrar: ");
-    produtos[opcaoEditar-1] = {nome, valor};
+    const produto = coletar();
+    if(produto.nome != "" && produto.valor != "" && produto.valor >= 0){
+        produtos[opcaoEditar-1] = produto;
+    }
 
 }
 
@@ -59,4 +68,4 @@ let excluir = () => {
     produtos.splice(opcaoExcluir-1,1);
 }
 
-module.exports = {cadastrar, listar, editar, excluir, casos}
+module.exports = {cadastrar, listar, editar, excluir, casos, coletar}
